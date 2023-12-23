@@ -1,13 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import countriesSlice from './home/Home';
-
-const reduxLogger = ('redux-logger');
-
-const logger = reduxLogger.createLogger();
+import logger from 'redux-logger';
+import countriesReducer from './home/Home';
 
 const store = configureStore({
   reducer: {
-    countries: countriesSlice,
+    countries: countriesReducer,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 });

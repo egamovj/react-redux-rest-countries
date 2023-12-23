@@ -86,10 +86,6 @@ function Details() {
               </div>
               <div className="detail-info-section">
                 <h4 className="font">
-                  Top Level Domain:
-                  <span className="details-mobile-info-data font">{country.tld}</span>
-                </h4>
-                <h4 className="font">
                   Currencies:
                   {filteredCurrency.map((currency) => (
                     <span key={currency.symbol} className="details-mobile-info-data font">
@@ -107,16 +103,6 @@ function Details() {
                   ))}
                 </h4>
               </div>
-            </section>
-            <section className="border-container">
-              { country.borders ? (
-                <>
-                  <h4 className="font">Border Countries:</h4>
-                  <h4 className="border-on-i-container">
-                    {bordersArr.map((border) => <div className="border-on-i font" key={border}>{border}</div>)}
-                  </h4>
-                </>
-              ) : null }
             </section>
           </div>
         </section>

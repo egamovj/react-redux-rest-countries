@@ -9,7 +9,7 @@ function DisplayCountries() {
   const [search, setSearch] = useState('');
   const [filterRegion, setFilterRegion] = useState('');
   const [closeRegions, openRegions] = useState(false);
-  const [value, setValue] = useState('Find by Region v');
+  const [value, setValue] = useState('Find by Region');
   const countries = useSelector((state) => state.countries);
 
   const filteredCountries = [countries];
@@ -20,13 +20,11 @@ function DisplayCountries() {
     dispatch(getCountries());
   }, [dispatch]);
 
-  //   Search the input for countries
   if (search !== '') {
     mappedCountries = countries.filter((country) => country.name.official
       .toLowerCase().includes(search.toLowerCase()));
   }
 
-  // Filter by region
   const handleOptions = (e) => {
     setValue(e.target.value);
     setFilterRegion(e.target.value);
